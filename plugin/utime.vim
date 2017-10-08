@@ -108,7 +108,7 @@ function! UpdateWithLastMod()
 			end
 
 			if spaceIndex1 != spaceIndex2
-				echohl WarningMsg | echo "The time format is different" lastdate spaceIndex1 timeStampFormat spaceIndex2 | echoh None
+				" echohl WarningMsg | echo "The time format is different" lastdate spaceIndex1 timeStampFormat spaceIndex2 | echoh None
 				exe pos
 				return
 			else
@@ -126,7 +126,6 @@ function! UpdateWithLastMod()
 		exe 's/'.lastdate.'/'.newdate.'/e'
 		call s:RemoveLastHistoryItem()
 	else
-		echo 'no change'
 		exe pos
 		return
 	end
